@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>registration form</title>
+    
+    <style>
+	table, th, td {
+  border:1px solid black;
+}
+      html, body {
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="main-block">
+      <h1>Registration</h1>
+      <form action="/" method="post">
+        <hr>
+        <label id="icon" for="Email"><i class="fas fa-envelope"></i></label>
+        <input type="text" name="Email" id="Email" placeholder="Email" required/>
+        <label id="icon" for="name"><i class="fas fa-user"></i></label>
+        <input type="text" name="name" id="name" placeholder="Name" required/>
+        
+        <hr>
+        
+        <div class="btn-block">
+          <button type="submit" href="/">Submit</button>
+        </div>
+      </form>
+	<div>
+	<table style="width:100%">
+  <tr>
+    <td>SNo</td>
+    <td>Email</td>
+    <td>Name</td>
+    <td>Time</td>
+  </tr>
+{% for my in allmy %}
+                <tr>
+    <td>{{loop.index}}</td>
+    <td>{{my.email}}</td>
+    <td>{{my.name}}</td>
+    <td>{{my.date_create}}</td>
+  </tr>
+         {% endfor %}
+  
+</table>
+	</div>
+
+    </div>
+	
+  </body>
+</html>
